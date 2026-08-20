@@ -1,0 +1,1 @@
+import express from'express';import{lineage}from'./domain.mjs';const d=lineage(),a=express();a.get('/health',(_,r)=>r.json({status:'ok',assets:d.assets.length}));const p=Number(process.env.LINEAGE_PORT)||20800;a.listen(p,'0.0.0.0',()=>console.log(`Data lineage governance service on 0.0.0.0:${p}`));
